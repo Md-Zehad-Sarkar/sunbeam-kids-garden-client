@@ -6,21 +6,11 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Image from "next/image";
+import { TProduct } from "@/types/products.type";
 
-interface IProduct {
-  _id?: string;
-  image: string;
-  title: string;
-  price: string;
-  ratings: number;
-  brand: string;
-  category: string;
-  description: string;
-  flashSale: boolean;
-}
-[];
 
-const CarouselSlider = ({ data }: { data: IProduct[] }) => {
+
+const CarouselSlider = ({ data }: { data: TProduct[] }) => {
   return (
     <Swiper
       spaceBetween={30}
@@ -35,7 +25,7 @@ const CarouselSlider = ({ data }: { data: IProduct[] }) => {
       navigation={true}
       modules={[Autoplay, Pagination, Navigation]}
     >
-      {data?.slice(0, 10).map((singleData) => (
+      {data?.slice(0, 10).map((singleData:TProduct) => (
         <SwiperSlide key={singleData?._id}>
           <div className="flex justify-center items-center py-4">
             <Image

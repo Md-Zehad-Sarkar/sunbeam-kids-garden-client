@@ -1,50 +1,39 @@
-import { TProduct } from "@/types/products.type";
-import Image from "next/image";
+// "use client";
 
+import FlashSaleCard from "./FlashSaleCard";
+import Link from "next/link";
+import { TProduct } from "@/types/products.type";
+
+// const FlashSale = ({ flashSales }: { flashSales: TProduct[] }) => {
 const FlashSale = async () => {
   const res = await fetch("http://localhost:5000/api/v1/products", {
     next: { revalidate: 30 },
   });
   const { data: products } = await res.json();
+
   const flashSales = products.filter(
     (product: TProduct) => product.flashSale === true
   );
+  const initialData = flashSales.slice(0, 4);
+  const viewAllData = flashSales.length > 4 ? initialData : flashSales;
+  const sortedViewAllData = viewAllData.sort((a: TProduct, b: TProduct) => {
+    const dateA = new Date(a.createdAt);
+    const dateB = new Date(b.createdAt);
+    return dateA.getTime() - dateB.getTime();
+  });
 
   return (
-    <div className="mt-24">
+    <div className="mt-24 mb-10">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-3xl font-semibold mb-3">Flash Sale</h2>
-        <button className="btn btn-secondary ">View All</button>
+        <Link href="/flash-sale">
+          <button className="btn btn-secondary ">See All</button>
+        </Link>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-        {flashSales.slice(0, 4).map((flashSale: TProduct) => (
-          <div
-            key={flashSale._id}
-            className="card w-full max-w-96 bg-base-100 shadow-xl hover:shadow-2xl"
-          >
-            <figure>
-              <Image
-                src={flashSale.image}
-                alt="clothes"
-                width={400}
-                height={400}
-                className="max-w-[300px] h-[250px]"
-              />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title relative">
-                {flashSale.title}
-                <p className="badge badge-secondary  ">{flashSale.price}</p>
-              </h2>
-              <p>{flashSale.description}</p>
-              <div className="card-actions justify-end">
-                <div className="badge badge-outline">add to cart</div>
-                <div className="badge badge-outline">Order now</div>
-              </div>
-            </div>
-          </div>
+        {sortedViewAllData?.map((flashSale: TProduct) => (
+          <FlashSaleCard key={flashSale._id} flashSale={flashSale} />
         ))}
-        b
       </div>
     </div>
   );

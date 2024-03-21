@@ -8,4 +8,5 @@ export type TProduct = {
   category: string;
   description: string;
   flashSale: boolean;
+  createdAt: string;
 };

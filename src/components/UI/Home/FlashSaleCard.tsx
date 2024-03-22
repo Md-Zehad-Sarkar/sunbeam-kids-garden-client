@@ -1,30 +1,7 @@
 // ("use client");
+import Ratings from "@/components/shared/Ratings/Ratings";
 import { TProduct } from "@/types/products.type";
 import Image from "next/image";
-
-export const getSalesOfferDuration = () => {
-  const today: Date = new Date();
-  const futureDate: Date = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
-  let diffInMilliseconds: number = futureDate.getTime() - today.getTime();
-
-  const days = Math.floor(diffInMilliseconds / (1000 * 60 * 60 * 24));
-  diffInMilliseconds -= days * 1000 * 60 * 60 * 24;
-
-  const hours = Math.floor(diffInMilliseconds / (1000 * 60 * 60));
-  diffInMilliseconds -= hours * 1000 * 60 * 60;
-
-  const minutes = Math.floor(diffInMilliseconds / (1000 * 60));
-  diffInMilliseconds -= minutes * 1000 * 60;
-
-  const seconds = Math.floor(diffInMilliseconds / 1000);
-
-  // Check if offer has expired
-  if (days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0) {
-    return "Offer Expired";
-  }
-
-  return `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
-};
 
 const FlashSaleCard = ({ flashSale }: { flashSale: TProduct }) => {
   return (
@@ -42,14 +19,13 @@ const FlashSaleCard = ({ flashSale }: { flashSale: TProduct }) => {
         />
       </figure>
       <div className="card-body">
-        <p>
-          <span className="badge badge-accent text-red-500 py-6">
-            {getSalesOfferDuration()}
-          </span>
-        </p>
+        <Ratings rating={flashSale?.ratings} />
+        {/* need implement here for offers timers */}
         <h2 className="card-title relative">
           {flashSale.title}
-          <p className="badge badge-secondary max-w-24 py-4 ">{flashSale.price}</p>
+          <p className="badge badge-secondary max-w-24 py-4 ">
+            {flashSale.price}
+          </p>
         </h2>
         <p>{flashSale.description}</p>
         <div className="card-actions justify-end">

@@ -1,5 +1,8 @@
+"use client";
+import Ratings from "@/components/shared/Ratings/Ratings";
 import { TProduct } from "@/types/products.type";
 import Image from "next/image";
+import StarRatings from "react-star-ratings";
 
 const TrendingProductCard = ({ product }: { product: TProduct }) => {
   return (
@@ -17,7 +20,8 @@ const TrendingProductCard = ({ product }: { product: TProduct }) => {
         />
       </figure>
       <div className="card-body">
-        <p>rating: {product?.ratings}</p>
+        <Ratings rating={product?.ratings} />
+
         <h2 className="card-title relative">
           {product?.title}
           <p className="badge badge-secondary max-w-24 py-4 ">

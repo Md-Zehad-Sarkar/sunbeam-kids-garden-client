@@ -16,7 +16,7 @@ const AboutPage = () => {
         </div>
       </div>
 
-      {/* Values Section */}
+    
       <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <div className="text-center">
           <h3 className="text-2xl font-bold text-gray-900">Quality</h3>

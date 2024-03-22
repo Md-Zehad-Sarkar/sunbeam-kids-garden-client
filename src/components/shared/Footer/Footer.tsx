@@ -29,7 +29,7 @@ const Footer = () => {
             <Link href="/products">Trending-Products</Link>
           </li>
           <li className="list-none">
-            <Link href="/categories">Categories</Link>
+            <Link href="/products">Categories</Link>
           </li>
         </nav>
         <nav>
@@ -41,7 +41,7 @@ const Footer = () => {
             <Link href="/contact">Contact-Us</Link>
           </li>
           <li className="list-none">
-            <Link href="/customer">Customer-Care</Link>
+            <Link href="/contact">Customer-Care</Link>
           </li>
         </nav>
         <nav>

@@ -8,8 +8,6 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Image from "next/image";
 import { TProduct } from "@/types/products.type";
 
-
-
 const CarouselSlider = ({ data }: { data: TProduct[] }) => {
   return (
     <Swiper
@@ -25,7 +23,7 @@ const CarouselSlider = ({ data }: { data: TProduct[] }) => {
       navigation={true}
       modules={[Autoplay, Pagination, Navigation]}
     >
-      {data?.slice(0, 10).map((singleData:TProduct) => (
+      {data?.slice(0, 10).map((singleData: TProduct) => (
         <SwiperSlide key={singleData?._id}>
           <div className="flex justify-center items-center py-4">
             <Image

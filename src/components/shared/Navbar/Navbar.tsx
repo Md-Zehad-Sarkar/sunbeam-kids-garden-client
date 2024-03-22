@@ -71,7 +71,6 @@ const Navbar = () => {
           height={200}
           className="w-12 h-12 rounded-full"
         />
-        {/* </a> */}
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navmenu}</ul>

@@ -27,9 +27,7 @@ const ProductsCard = ({ product }: { product: TProduct }) => {
         </h2>
         <p>{product.description}</p>
         <div className="card-actions justify-end">
-          {/* <div className="btn btn-secondary">add to cart</div>
-          <div className="btn btn-secondary">Order now</div> */}
-          <Link href={`/products/${product._id}`}>
+          <Link href={`/${product?.category}/${product._id}`}>
             <button className="btn btn-secondary">View Details</button>
           </Link>
         </div>

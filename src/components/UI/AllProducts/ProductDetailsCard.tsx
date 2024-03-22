@@ -17,10 +17,7 @@ const ProductDetailsCard = ({ product }: { product: TProduct }) => {
         <h2 className="card-title">product name: {product?.title}</h2>
         <p>
           price:
-          <span className="badge badge-secondary ml-2">
-            {" "}
-            $ {product?.price}
-          </span>
+          <span className="badge badge-secondary ml-2">$ {product?.price}</span>
         </p>
         <p>brand: {product?.brand}</p>
         <p>category: {product?.category}</p>

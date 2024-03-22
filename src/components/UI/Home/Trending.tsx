@@ -1,5 +1,6 @@
 import { TProduct } from "@/types/products.type";
 import TrendingProductCard from "./TrendingProductCard";
+import Link from "next/link";
 
 const Trending = async () => {
   const res = await fetch("http://localhost:5000/api/v1/products", {
@@ -9,6 +10,8 @@ const Trending = async () => {
   const sortedProduct = products.sort((a: TProduct, b: TProduct) => {
     return b.ratings - a.ratings;
   });
+  const initialProduct = sortedProduct.slice(0, 6);
+  const seeAllProducts = products.length > 6 ? initialProduct : products;
 
   return (
     <div className="mt-24 mb-10">
@@ -26,9 +29,14 @@ const Trending = async () => {
           kids!
         </p>
       </div>
-      <h2 className="text-3xl font-semibold mb-8">Trending Products</h2>
+      <div className="flex justify-between items-center">
+        <h2 className="text-3xl font-semibold mb-8">Trending Products</h2>
+        <Link href="/products">
+          <button className="btn btn-secondary">See All</button>
+        </Link>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-        {sortedProduct?.slice(0, 6).map((product: TProduct) => (
+        {seeAllProducts?.slice(0, 6).map((product: TProduct) => (
           <TrendingProductCard key={product?._id} product={product} />
         ))}
       </div>

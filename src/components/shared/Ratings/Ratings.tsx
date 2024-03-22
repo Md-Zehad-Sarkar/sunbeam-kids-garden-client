@@ -8,6 +8,7 @@ const Ratings = ({ rating }: { rating: any }) => {
         rating={rating}
         starDimension="25px"
         starSpacing="5px"
+        starRatedColor="blue"
       />
     </div>
   );

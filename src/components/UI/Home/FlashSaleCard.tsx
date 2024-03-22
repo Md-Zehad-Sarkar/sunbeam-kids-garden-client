@@ -49,12 +49,12 @@ const FlashSaleCard = ({ flashSale }: { flashSale: TProduct }) => {
         </p>
         <h2 className="card-title relative">
           {flashSale.title}
-          <p className="badge badge-secondary  ">{flashSale.price}</p>
+          <p className="badge badge-secondary max-w-24 py-4 ">{flashSale.price}</p>
         </h2>
         <p>{flashSale.description}</p>
         <div className="card-actions justify-end">
-          <div className="badge badge-outline">add to cart</div>
-          <div className="badge badge-outline">Order now</div>
+          <button className="btn btn-secondary">add to cart</button>
+          <button className="btn btn-secondary">Order now</button>
         </div>
       </div>
     </div>

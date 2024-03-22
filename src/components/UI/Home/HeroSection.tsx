@@ -12,7 +12,7 @@ const HeroSection = async () => {
     <div className="bg-base-200">
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content text-center">
-          <div className="max-w-xl">
+          <div className="max-w-2xl">
             <h1 className="text-3xl font-bold">
               Welcome to Sunbeam Kids Garden <br /> - <br /> Discover Fashion
               Wonderland at Sunbeam Kids Garden!!

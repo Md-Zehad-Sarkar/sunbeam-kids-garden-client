@@ -1,3 +1,4 @@
+import Ratings from "@/components/shared/Ratings/Ratings";
 import { TProduct } from "@/types/products.type";
 import Image from "next/image";
 import Link from "next/link";
@@ -19,6 +20,7 @@ const ProductsCard = ({ product }: { product: TProduct }) => {
         />
       </figure>
       <div className="card-body">
+        <Ratings rating={product?.ratings} />
         <h2 className="card-title">
           {product.title}
           <p className="badge badge-secondary max-w-24 py-3">

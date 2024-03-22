@@ -10,7 +10,7 @@ type TProductIdParams = {
 export const generatedStaticParams = async () => {
   const res = await fetch("http://localhost:5000/api/v1/products");
   const { data: products } = await res.json();
-  return products?.map((product: TProduct) => ({
+  return products?.slice(0, 10)?.map((product: TProduct) => ({
     productId: product._id,
   }));
 };

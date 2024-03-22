@@ -2,7 +2,6 @@
 import Ratings from "@/components/shared/Ratings/Ratings";
 import { TProduct } from "@/types/products.type";
 import Image from "next/image";
-import StarRatings from "react-star-ratings";
 
 const TrendingProductCard = ({ product }: { product: TProduct }) => {
   return (

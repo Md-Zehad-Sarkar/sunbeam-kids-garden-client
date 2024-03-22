@@ -1,6 +1,7 @@
 import Categories from "@/components/UI/Home/Categories";
 import FlashSale from "@/components/UI/Home/FlashSale";
 import HeroSection from "@/components/UI/Home/HeroSection";
+import Sponsors from "@/components/UI/Home/Sponsors";
 import Trending from "@/components/UI/Home/Trending";
 
 const HomePage = () => {
@@ -10,6 +11,7 @@ const HomePage = () => {
       <FlashSale />
       <Categories />
       <Trending />
+      <Sponsors />
     </div>
   );
 };

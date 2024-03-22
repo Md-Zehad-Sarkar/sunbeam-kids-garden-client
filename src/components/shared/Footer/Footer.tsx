@@ -12,16 +12,16 @@ const Footer = () => {
             alt="logo"
             width={50}
             height={50}
-            className="rounded-full"
+            className="rounded-full w-12 h-12"
           />
-          <h6 className="">Sunbeam Kids Garden</h6>
+          <h6 className="text-lg">Sunbeam Kids Garden</h6>
           <p>Jamuna Future Park, 2nd Floor</p>
           <p className="text-xl">
             &copy;2024 <span>All rights reserved.</span>{" "}
           </p>
         </nav>
         <nav>
-          <h6 className="footer-title">Services</h6>
+          <h6 className="footer-title text-lg">Services</h6>
           <li className="list-none">
             <Link href="/">Home</Link>
           </li>
@@ -33,7 +33,7 @@ const Footer = () => {
           </li>
         </nav>
         <nav>
-          <h6 className="footer-title">Company</h6>
+          <h6 className="footer-title text-lg">Company</h6>
           <li className="list-none">
             <Link href="/about">About-Us</Link>
           </li>
@@ -45,7 +45,7 @@ const Footer = () => {
           </li>
         </nav>
         <nav>
-          <h6 className="footer-title">Legal</h6>
+          <h6 className="footer-title text-lg">Legal</h6>
           <Link href="/terms" className="link link-hover">
             Terms of use
           </Link>

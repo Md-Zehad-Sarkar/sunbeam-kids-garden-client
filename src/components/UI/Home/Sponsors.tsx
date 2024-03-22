@@ -1,6 +1,6 @@
 const Sponsors = () => {
   return (
-    <div className="bg-gray-100 flex justify-between">
+    <div className="bg-gray-100 flex justify-between max-w-7xl mx-auto flex-wrap">
       <div className="bg-base-200 w-32 h-24 rounded-md flex justify-center items-center">
         <p>Google</p>
       </div>

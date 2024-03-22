@@ -14,10 +14,10 @@ const Trending = async () => {
   const seeAllProducts = products.length > 6 ? initialProduct : products;
 
   return (
-    <div className="mt-24 mb-10">
+    <div className="mt-24 mb-10 mx-2">
       <div className="text-center mb-4 w-full max-w-[800px] mx-auto">
         <h3 className="mb-3">Explore our trending Kids items!</h3>
-        <p>
+        <p className="text-justify">
           Discover a wide range of trendy and fun clothing options for your
           children at our online store. Our latest collections feature diverse
           designs tailored to match your satisfaction and your little one's

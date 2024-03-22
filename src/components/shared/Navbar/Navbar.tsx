@@ -1,5 +1,6 @@
 import Link from "next/link";
-import React from "react";
+import logo from "../../../../public/logo.jpeg";
+import Image from "next/image";
 
 const Navbar = () => {
   const navmenu = (
@@ -7,7 +8,7 @@ const Navbar = () => {
       <li>
         <Link href="/">Home</Link>
       </li>
-      {/* <Link href="/categories">Categories</Link> */}
+
       <li>
         <details>
           <summary>Categories</summary>
@@ -16,7 +17,7 @@ const Navbar = () => {
               <Link href="/kids-wear">Kids-Wear</Link>
             </li>
             <li>
-              <Link href="/kids-wear">Baby-Wear</Link>
+              <Link href="/children-cloths">Baby-Wear</Link>
             </li>
           </ul>
         </details>
@@ -62,13 +63,23 @@ const Navbar = () => {
             {navmenu}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+
+        <Image
+          src={logo}
+          alt="logo"
+          width={200}
+          height={200}
+          className="w-12 h-12 rounded-full"
+        />
+        {/* </a> */}
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navmenu}</ul>
       </div>
       <div className="navbar-end">
-        <Link href='/dashboard' className="">Dashboard</Link>
+        <Link href="/dashboard" className="">
+          Dashboard
+        </Link>
       </div>
     </div>
   );

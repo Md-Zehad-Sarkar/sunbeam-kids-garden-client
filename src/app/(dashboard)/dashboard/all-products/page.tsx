@@ -6,10 +6,10 @@ const DashboardAllProductsPage = async () => {
   const { data: products } = await res.json();
 
   return (
-    <div className="mt-24 mb-10">
+    <div className="mt-12 mb-10">
       <div className="overflow-x-auto">
         <table className="table">
-          <thead>
+          <thead className="text-lg">
             <tr>
               <th>Sl no</th>
               <th>Items</th>

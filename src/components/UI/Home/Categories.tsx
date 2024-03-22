@@ -8,10 +8,10 @@ const Categories = async () => {
   const { data: categories } = await res.json();
 
   return (
-    <div className="mt-24 mb-10 max-w-[1000px] mx-auto text-center">
+    <div className="mt-24 mb-10 max-w-[1000px] mx-auto text-center p-2">
       <div className="text-center max-w-[800px] mx-auto ">
         <h2 className="mb-3">Explore Trendy Choices for Your Little Ones</h2>
-        <p className="">
+        <p className="text-justify">
           Discover a world of fashion tailored for children at our Kids Fashion
           Store. From adorable toddler outfits to stylish options for older
           kids, we offer a diverse range of categories to suit every taste and
@@ -22,7 +22,7 @@ const Categories = async () => {
           joy of dressing up your kids with our curated collection today.
         </p>
       </div>
-      <div className="grid grid-cols-4 gap-8 justify-center items-center max-w-7xl mx-auto mt-10 mb-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-center items-center max-w-7xl mx-auto mt-10 mb-10 p-2">
         <Link href={`/${categories[0].category}`}>
           <div className="card card-compact w-full max-w-[800px] bg-base-100 shadow-xl">
             <figure>

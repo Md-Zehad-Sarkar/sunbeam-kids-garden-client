@@ -11,6 +11,7 @@ const ProductTableRow = ({ product, i }: { product: TProduct; i: string }) => {
           alt="product image"
           width={100}
           height={100}
+          className="max-w-{80px} max-h-[80px] rounded-full"
         />
         <p>{product?.title}</p>
       </td>

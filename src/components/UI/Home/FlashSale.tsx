@@ -4,7 +4,6 @@ import FlashSaleCard from "./FlashSaleCard";
 import Link from "next/link";
 import { TProduct } from "@/types/products.type";
 
-// const FlashSale = ({ flashSales }: { flashSales: TProduct[] }) => {
 const FlashSale = async () => {
   const res = await fetch("http://localhost:5000/api/v1/products", {
     next: { revalidate: 30 },
@@ -24,7 +23,7 @@ const FlashSale = async () => {
 
   return (
     <div className="mt-24 mb-10">
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex justify-between items-center mb-4 px-2">
         <h2 className="text-3xl font-semibold mb-3">Flash Sale</h2>
         <Link href="/flash-sale">
           <button className="btn btn-secondary ">See All</button>

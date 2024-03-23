@@ -1,9 +1,14 @@
-// ("use client");
+import OfferedTime from "@/components/shared/OfferedTime/OfferedTime";
 import Ratings from "@/components/shared/Ratings/Ratings";
 import { TProduct } from "@/types/products.type";
 import Image from "next/image";
+import Link from "next/link";
 
 const FlashSaleCard = ({ flashSale }: { flashSale: TProduct }) => {
+  const currentPrice = Number(flashSale.price);
+  const offeredPrice = currentPrice - 100 * 0.1;
+  const newOffer = offeredPrice.toFixed(2);
+
   return (
     <div
       key={flashSale._id}
@@ -19,8 +24,14 @@ const FlashSaleCard = ({ flashSale }: { flashSale: TProduct }) => {
         />
       </figure>
       <div className="card-body">
+        <p className="">
+          Offered Price:
+          <span className="badge badge-secondary max-w-24"> $ {newOffer}</span>
+        </p>
+        <OfferedTime />
+
         <Ratings rating={flashSale?.ratings} />
-        {/* need implement here for offers timers */}
+
         <h2 className="card-title relative">
           {flashSale.title}
           <p className="badge badge-secondary max-w-24 py-4 ">
@@ -29,8 +40,9 @@ const FlashSaleCard = ({ flashSale }: { flashSale: TProduct }) => {
         </h2>
         <p>{flashSale.description}</p>
         <div className="card-actions justify-end">
-          <button className="btn btn-secondary">add to cart</button>
-          <button className="btn btn-secondary">Order now</button>
+          <Link href={`/flash-sale/${flashSale._id}`}>
+            <button className="btn btn-secondary">View Details</button>
+          </Link>
         </div>
       </div>
     </div>

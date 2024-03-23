@@ -9,6 +9,7 @@ const ProductPage = async () => {
   const { data: products } = await res.json();
   return (
     <div className="mt-24 mb-10">
+      <h2>filtering, price range</h2>
       <h2 className="mb-8">All Products</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {products?.map((product: TProduct) => (

@@ -1,8 +1,12 @@
+import OfferedTime from "@/components/shared/OfferedTime/OfferedTime";
 import Ratings from "@/components/shared/Ratings/Ratings";
 import { TProduct } from "@/types/products.type";
 import Image from "next/image";
 
 const ProductDetailsCard = ({ product }: { product: TProduct }) => {
+  const currentPrice = Number(product.price);
+  const offeredPrice = currentPrice - 100 * 0.1;
+  const newOffer = offeredPrice.toFixed(2);
   return (
     <div className="card max-w-[800px] bg-base-100 shadow-xl mt-24 mb-10 mx-auto">
       <figure>
@@ -15,7 +19,14 @@ const ProductDetailsCard = ({ product }: { product: TProduct }) => {
         />
       </figure>
       <div className="card-body">
-        <Ratings rating={product?.ratings}/>
+        <p className="">
+          Offered Price:
+          <span className="badge badge-secondary max-w-24"> $ {newOffer}</span>
+        </p>
+        <div className="max-w-60">
+          <OfferedTime />
+        </div>
+        <Ratings rating={product?.ratings} />
         <h2 className="card-title">product name: {product?.title}</h2>
         <p>
           price:

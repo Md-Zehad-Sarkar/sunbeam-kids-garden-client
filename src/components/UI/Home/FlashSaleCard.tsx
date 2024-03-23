@@ -6,7 +6,9 @@ import Link from "next/link";
 
 const FlashSaleCard = ({ flashSale }: { flashSale: TProduct }) => {
   const currentPrice = Number(flashSale.price);
+
   const offeredPrice = currentPrice - 100 * 0.1;
+
   const newOffer = offeredPrice.toFixed(2);
 
   return (

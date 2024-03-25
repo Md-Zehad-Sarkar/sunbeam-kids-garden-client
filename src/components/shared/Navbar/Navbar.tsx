@@ -1,6 +1,7 @@
 import Link from "next/link";
 import logo from "../../../../public/logo.jpeg";
 import Image from "next/image";
+import profile from "@/assets/images/coti.jpeg";
 
 const Navbar = () => {
   const navmenu = (
@@ -10,24 +11,17 @@ const Navbar = () => {
       </li>
 
       <li>
-        <details>
-          <summary>Categories</summary>
-          <ul className="p-2">
-            <li>
-              <Link href="/kids-wear">Kids-Wear</Link>
-            </li>
-            <li>
-              <Link href="/children-cloths">Baby-Wear</Link>
-            </li>
-          </ul>
-        </details>
-      </li>
-      <li>
         <Link href="/products">Products</Link>
       </li>
       <li>
         <Link href="/flash-sale">Flash-Sale</Link>
       </li>
+      <li>
+        <Link href="/dashboard" className="">
+          Dashboard
+        </Link>
+      </li>
+
       <li>
         <Link href="/about">About-Us</Link>
       </li>
@@ -76,9 +70,17 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navmenu}</ul>
       </div>
       <div className="navbar-end">
-        <Link href="/dashboard" className="">
-          Dashboard
-        </Link>
+        <div className="avatar">
+          <div className="w-16 rounded-full">
+            <Image
+              src={profile}
+              alt="profile image"
+              width={200}
+              height={200}
+              className="w-16 h-16 rounded-full"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

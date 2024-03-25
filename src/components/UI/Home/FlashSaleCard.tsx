@@ -34,8 +34,11 @@ const FlashSaleCard = ({ flashSale }: { flashSale: TProduct }) => {
 
         <Ratings rating={flashSale?.ratings} />
 
-        <h2 className="card-title relative">
+        <h2 className="card-title relative ">
+          <h2 className="text-[18px] truncate">
+
           {flashSale.title}
+          </h2>
           <p className="badge badge-secondary max-w-24 py-4 ">
             {flashSale.price}
           </p>

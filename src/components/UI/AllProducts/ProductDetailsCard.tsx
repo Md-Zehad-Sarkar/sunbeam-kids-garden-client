@@ -27,7 +27,7 @@ const ProductDetailsCard = ({ product }: { product: TProduct }) => {
           <OfferedTime />
         </div>
         <Ratings rating={product?.ratings} />
-        <h2 className="card-title">product name: {product?.title}</h2>
+        <h2 className="card-title truncate">product name: {product?.title}</h2>
         <p>
           price:
           <span className="badge badge-secondary ml-2">$ {product?.price}</span>

@@ -1,13 +1,15 @@
-// "use client";
-
 import FlashSaleCard from "./FlashSaleCard";
 import Link from "next/link";
 import { TProduct } from "@/types/products.type";
 
 const FlashSale = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/products", {
-    next: { revalidate: 30 },
-  });
+  const res = await fetch(
+    "https://sunbeam-kids-garden-server.vercel.app/api/v1/products",
+    {
+      next: { revalidate: 30 },
+    }
+  );
+
   const { data: products } = await res.json();
 
   const flashSales = products.filter(

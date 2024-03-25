@@ -22,8 +22,9 @@ const ProductsCard = ({ product }: { product: TProduct }) => {
       <div className="card-body">
         <Ratings rating={product?.ratings} />
         <h2 className="card-title">
-          {product.title}
-          <p className="badge badge-secondary max-w-24 py-3">
+          <h2 className="truncate text-[18px]"> {product.title}</h2>
+
+          <p className="badge badge-secondary w-full max-w-24 py-3">
             $ {product.price}
           </p>
         </h2>

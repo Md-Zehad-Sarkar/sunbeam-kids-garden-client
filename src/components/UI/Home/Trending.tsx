@@ -3,9 +3,13 @@ import TrendingProductCard from "./TrendingProductCard";
 import Link from "next/link";
 
 const Trending = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/products", {
-    next: { revalidate: 30 },
-  });
+  const res = await fetch(
+    "https://sunbeam-kids-garden-server.vercel.app/api/v1/products",
+    {
+      next: { revalidate: 30 },
+    }
+  );
+
   const { data: products } = await res.json();
   const sortedProduct = products.sort((a: TProduct, b: TProduct) => {
     return b.ratings - a.ratings;
@@ -20,7 +24,7 @@ const Trending = async () => {
         <p className="text-justify">
           Discover a wide range of trendy and fun clothing options for your
           children at our online store. Our latest collections feature diverse
-          designs tailored to match your satisfaction and your little one's
+          designs tailored to match your satisfaction and your little one is
           style preferences. Rest assured that our products prioritize both
           comfort and style for your beloved sons and daughters. With modern
           designs, high-quality materials, and convenient payment options, we

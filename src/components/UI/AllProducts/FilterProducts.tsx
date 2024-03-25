@@ -63,22 +63,29 @@ const FilterProducts = ({ products }: { products: TProduct[] }) => {
   };
 
   return (
-    <div>
-      <select
-        onChange={handleCategoryChange}
-        className="select select-info w-full max-w-[120px]"
-      >
-        <option value="">All Categories</option>
-        <option value="kids-wear">Kids Wear</option>
-        <option value="children-clothing">Children Clothing</option>
-        <option value="babies-cloths">Babies Clothes</option>
-        <option value="tops-wear">Tops Wear</option>
-        <option value="bottoms-wear">Bottoms Wear</option>
-        <option value="sleepwear">Sleepwear</option>
-        <option value="outerwear">Outerwear</option>
-        <option value="dresses">Dresses</option>
-        <option value="socks">Socks</option>
-      </select>
+    <div className="flex gap-4">
+      <div>
+        <div>
+          <p className="mb-1 border-l-2 border-red-500">
+            <span className="ml-1">Filter</span>
+          </p>
+          <select
+            onChange={handleCategoryChange}
+            className="select select-info w-full max-w-[150px]"
+          >
+            <option value="">All</option>
+            <option value="kids-wear">Kids Wear</option>
+            <option value="children-clothing">Children Clothing</option>
+            <option value="babies-cloths">Babies Clothes</option>
+            <option value="tops-wear">Tops Wear</option>
+            <option value="bottoms-wear">Bottoms Wear</option>
+            <option value="sleepwear">Sleepwear</option>
+            <option value="outerwear">Outerwear</option>
+            <option value="dresses">Dresses</option>
+            <option value="socks">Socks</option>
+          </select>
+        </div>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {filteredProducts.map((product: TProduct) => (
           <ProductsCard key={product._id} product={product} />
